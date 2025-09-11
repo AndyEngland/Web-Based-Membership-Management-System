@@ -1,1 +1,8 @@
-# ...existing code...
+# Requirements for production image
+# Add your project's Python dependencies here. Keeping minimal for now.
+
+gunicorn>=20.1.0
+# Example additional deps (uncomment and adjust to match your project):
+# django>=4.2
+# djangorestframework
+# psycopg2-binary  # if using PostgreSQL

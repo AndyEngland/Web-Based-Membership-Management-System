@@ -12,6 +12,9 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
+# Build arg to force pip layer cache-bust when needed
+ARG CACHEBUST=1
+
 # Install Python deps
 COPY requirements.txt /app/
 RUN pip install --upgrade pip && pip install -r requirements.txt

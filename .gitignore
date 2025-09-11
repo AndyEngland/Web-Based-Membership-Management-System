@@ -142,3 +142,5 @@ Thumbs.db
 # Django specific
 staticfiles/
 media/
+# Ignore mobile app node modules
+mobile-app/node_modules/

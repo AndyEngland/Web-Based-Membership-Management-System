@@ -1,8 +1,9 @@
 # Requirements for production image
-# Add your project's Python dependencies here. Keeping minimal for now.
+# Minimal production dependencies. Add more packages your project needs.
 
 gunicorn>=20.1.0
-# Example additional deps (uncomment and adjust to match your project):
-# django>=4.2
-# djangorestframework
-# psycopg2-binary  # if using PostgreSQL
+Django>=4.2
+djangorestframework>=3.14
+# If you use PostgreSQL, uncomment the following line and set DATABASE_URL in Render:
+# psycopg2-binary>=2.9
+

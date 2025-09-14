@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,11 @@ SECRET_KEY = 'django-insecure-your-secret-key-here-change-in-production'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Populate ALLOWED_HOSTS from environment for production (supports Render)
+# Priority: explicit ALLOWED_HOSTS env (comma-separated) -> RENDER_EXTERNAL_HOSTNAME -> sensible defaults
+
+# Hardcoded for Render deployment
+ALLOWED_HOSTS = ['admin-bewarea.onrender.com']
 
 
 # Application definition

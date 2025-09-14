@@ -23,8 +23,12 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 COPY . /app/
 
 
+
 # Create persistent data directory for SQLite
 RUN mkdir -p /data && chmod 777 /data
+
+# Copy persistent database file if present
+COPY data/db.sqlite3 /data/db.sqlite3
 
 # Ensure entrypoint is executable
 COPY entrypoint.sh /app/entrypoint.sh

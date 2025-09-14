@@ -28,5 +28,8 @@ python manage.py migrate --noinput
 echo "Collecting static files..."
 python manage.py collectstatic --noinput
 
+echo "Creating initial admin (if configured)..."
+python manage.py create_initial_admin || true
+
 echo "Starting Gunicorn..."
 exec gunicorn yzer_membership.wsgi:application --workers 3 --bind 0.0.0.0:${PORT}

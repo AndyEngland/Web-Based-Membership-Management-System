@@ -22,6 +22,10 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 # Copy project
 COPY . /app/
 
+
+# Create persistent data directory for SQLite
+RUN mkdir -p /data && chmod 777 /data
+
 # Ensure entrypoint is executable
 COPY entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
